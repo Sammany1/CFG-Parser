@@ -1,7 +1,7 @@
 import os
 import tkinter as tk
 from PIL import Image, ImageTk
-from ttkbootstrap import Style
+from ttkbootstrap import Style, ttk
 from tkinter import messagebox
 from parser import CFGParser
 
@@ -39,17 +39,17 @@ class CFGApp:
         self.entry_string.pack(pady=5)
 
         # Parse Button
-        btn_parse = tk.Button(frame, text="Parse", command=self.run_parser)
+        btn_parse = ttk.Button(frame, text="Parse", command=self.run_parser)
         btn_parse.pack(pady=5)
 
         # Show Buttons
         btn_frame = tk.Frame(self.root)
         btn_frame.pack()
 
-        self.btn_show_derivation = tk.Button(btn_frame, text="Show Derivation", command=self.show_derivation)
+        self.btn_show_derivation = ttk.Button(btn_frame, text="Show Derivation", command=self.show_derivation)
         self.btn_show_derivation.grid(row=0, column=0, padx=10)
 
-        self.btn_show_tree = tk.Button(btn_frame, text="Show Parse Tree", command=self.show_tree)
+        self.btn_show_tree = ttk.Button(btn_frame, text="Show Parse Tree", command=self.show_tree)
         self.btn_show_tree.grid(row=0, column=1, padx=10)
 
         # Container to hold derivation and tree side by side
